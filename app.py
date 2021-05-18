@@ -18,13 +18,20 @@ app=Flask(__name__)
 def home():
     return render_template('index.html')
 
+
 @app.route('/genereitor', methods=['POST', ])
 def genereitor():
     latter = request. form['latter']
     number = request. form['number']
     number_caracter = request. form['number_caracter']
-    Genereitor.genereitor_password(latter, str(number), number_caracter)
-    return redirect('home')
+    result = Genereitor.genereitor_password(latter, str(number), int(number_caracter))
+    return redirect(url_for('result'))
+
+@app.route("/result")
+def result():
+    return render_template('result.html')
+
+
 
 
 if __name__ == '__main__':

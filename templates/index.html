@@ -24,9 +24,12 @@
       </div>
       <div class="form-data">
         <tr>
-          <td><input type="text" value="exp. a, B, c, d"></td>
-          <td><input type="text" value="exp. 1,2,3"></td>
+        <form method="POST" action="{{ url_for('genereitor') }}">
+          <td><input type="text" value="exp. a, B, c, d" id = "latter" name="latter"></td>
+          <td><input type="text" value="exp. 1,2,3" id = "number" name='number'></td>
+          <td><input type="text" value="Number Caracter" id = "number_caracter" name="number_caracter"></td>
           <button>Gerar</button>
+          </form>
         </tr>
       </div>
     </main>

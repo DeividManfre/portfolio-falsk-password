@@ -1,12 +1,8 @@
 version: "3.9"
-   
 services:
   web:
     build: .
-    command: flask run
-    volumes:
-      - ./code
     ports:
-      - "8000:8000"
-    depends_on:
-      - db
+     - "5000:5000"
+    volumes:
+     - .:/code
